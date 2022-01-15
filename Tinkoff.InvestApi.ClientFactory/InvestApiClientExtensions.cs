@@ -1,27 +1,30 @@
 ﻿using Grpc.Core;
 using Grpc.Net.Client.Configuration;
-using Microsoft.Extensions.Options;
 using Tinkoff.InvestApi;
 
 namespace Microsoft.Extensions.DependencyInjection;
 
 public static class InvestApiClientExtensions
 {
-    public static IServiceCollection AddInvestApiClient(this IServiceCollection services, string accessToken)
-    {
-        services.AddOptions<InvestApiSettings>().Configure(x => x.AccessToken = accessToken);
-        return services.AddInvestApiClient();
-    }
-    
-    public static IServiceCollection AddInvestApiClient(this IServiceCollection services)
-    {
-        services.AddSingleton<IValidateOptions<InvestApiSettings>>(new ValidateOptions<InvestApiSettings>(string.Empty,
-            settings => !string.IsNullOrWhiteSpace(settings.AccessToken), "AccessToken is required"));
+    private const string DefaultName = "";
 
-        services.AddGrpcClient<InvestApiClient>(o => o.Address = new Uri("https://invest-public-api.tinkoff.ru:443"))
+    public static IServiceCollection AddInvestApiClient(this IServiceCollection services,
+        Action<IServiceProvider, InvestApiSettings> configureSettings)
+    {
+        return services.AddInvestApiClient(DefaultName, configureSettings);
+    }
+
+    public static IServiceCollection AddInvestApiClient(this IServiceCollection services, string name,
+        Action<IServiceProvider, InvestApiSettings> configureSettings)
+    {
+        services.AddGrpcClient<InvestApiClient>(name,
+                o => o.Address = new Uri("https://invest-public-api.tinkoff.ru:443"))
             .ConfigureChannel((serviceProvider, options) =>
             {
-                var accessToken = serviceProvider.GetRequiredService<IOptions<InvestApiSettings>>().Value.AccessToken;
+                var settings = new InvestApiSettings();
+                configureSettings(serviceProvider, settings);
+                var accessToken = settings.AccessToken ??
+                                  throw new InvalidOperationException("AccessToken is required");
                 var credentials = CallCredentials.FromInterceptor((_, metadata) =>
                 {
                     metadata.Add("Authorization", $"Bearer {accessToken}");

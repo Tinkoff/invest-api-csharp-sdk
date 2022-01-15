@@ -1,15 +1,14 @@
 using Microsoft.Extensions.Configuration.UserSecrets;
 using Tinkoff.InvestApi.Sample;
 
-[assembly: UserSecretsId("dotnet-Tinkoff.InvestApi.Sample-D6A3E63B-22F2-4DD0-BD53-B1C61D66D657")]
+[assembly: UserSecretsId("2323bae0-f4bf-4c7b-90ce-1b87d3fd76a8")]
 
 var builder = Host.CreateDefaultBuilder(args);
 var host = builder
     .ConfigureServices((context, services) =>
     {
         services.AddHostedService<Worker>()
-            .Configure<InvestApiSettings>(context.Configuration)
-            .AddInvestApiClient();
+            .AddInvestApiClient((_, settings) => context.Configuration.Bind(settings));
     })
     .Build();
 await host.RunAsync();

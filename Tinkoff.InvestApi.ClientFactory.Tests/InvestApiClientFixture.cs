@@ -14,7 +14,7 @@ public class InvestApiClientFixture
     public InvestApiClientFixture()
     {
         var serviceCollection = new ServiceCollection();
-        serviceCollection.AddInvestApiClient("token");
+        serviceCollection.AddInvestApiClient((_, settings) => settings.AccessToken = "token");
         serviceCollection.AddOptions<GrpcClientFactoryOptions>(nameof(InvestApiClient))
             .PostConfigure(factoryOptions => factoryOptions.ChannelOptionsActions.Add(options =>
             {
