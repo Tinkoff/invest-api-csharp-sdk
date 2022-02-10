@@ -26,6 +26,6 @@ jobs:
       run: dotnet pack -c Release --no-build --include-source
     - name: Publish the package to nuget.org
       if: github.ref == 'refs/heads/main'
-      run: dotnet nuget push */bin/Release/*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
+      run: dotnet nuget push */bin/Release/*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json --skip-duplicate
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
