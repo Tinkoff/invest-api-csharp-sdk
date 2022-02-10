@@ -12,7 +12,7 @@ public class InvestApiClientFixture
     {
         var serviceCollection = new ServiceCollection();
         serviceCollection.AddInvestApiClient((_, settings) => settings.AccessToken = "token");
-        serviceCollection.AddOptions<GrpcClientFactoryOptions>(nameof(InvestApiClient))
+        serviceCollection.AddOptions<GrpcClientFactoryOptions>("")
             .PostConfigure(factoryOptions => factoryOptions.ChannelOptionsActions.Add(options =>
             {
                 options.HttpHandler = MockHttpMessageHandler;
