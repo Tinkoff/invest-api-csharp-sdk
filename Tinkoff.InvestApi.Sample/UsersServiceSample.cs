@@ -1,5 +1,5 @@
 using System.Text;
-using Tinkoff.InvestAPI.V1;
+using Tinkoff.InvestApi.V1;
 
 namespace Tinkoff.InvestApi.Sample;
 

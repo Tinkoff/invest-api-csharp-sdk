@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using RichardSzalay.MockHttp;
-using Tinkoff.InvestAPI.V1;
+using Tinkoff.InvestApi.V1;
 
 namespace Tinkoff.InvestApi.Tests;
 

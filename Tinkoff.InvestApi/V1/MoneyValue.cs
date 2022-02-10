@@ -1,4 +1,4 @@
-namespace Tinkoff.InvestAPI.V1;
+namespace Tinkoff.InvestApi.V1;
 
 public partial class MoneyValue
 {

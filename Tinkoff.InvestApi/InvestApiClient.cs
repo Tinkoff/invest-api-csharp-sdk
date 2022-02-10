@@ -1,5 +1,5 @@
 ﻿using Grpc.Core;
-using Tinkoff.InvestAPI.V1;
+using Tinkoff.InvestApi.V1;
 
 namespace Tinkoff.InvestApi;
 

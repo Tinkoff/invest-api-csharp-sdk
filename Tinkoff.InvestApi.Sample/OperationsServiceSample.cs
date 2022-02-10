@@ -1,6 +1,6 @@
 using System.Text;
 using Google.Protobuf.WellKnownTypes;
-using Tinkoff.InvestAPI.V1;
+using Tinkoff.InvestApi.V1;
 
 namespace Tinkoff.InvestApi.Sample;
 
