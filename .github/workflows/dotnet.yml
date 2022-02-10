@@ -21,17 +21,11 @@ jobs:
       run: dotnet build -c Release
     - name: Test
       run: dotnet test -c Release --no-build --verbosity normal
-      
-  release:
-    needs: build
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    steps:
     - name: Pack
+      if: github.ref == 'refs/heads/main'
       run: dotnet pack -c Release --no-build --include-source
     - name: Publish the package to nuget.org
+      if: github.ref == 'refs/heads/main'
       run: dotnet nuget push */bin/Release/*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
-        
-  
