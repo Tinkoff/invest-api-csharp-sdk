@@ -26,7 +26,7 @@ dotnet build -c Release
 
 ## Документация
 
-Подробная документация непосредственно по InvestApi можно найти по [ссылке](https://tinkoff.github.io/InvestApi/).
+Подробную документацию по InvestApi можно найти по [ссылке](https://tinkoff.github.io/InvestApi/).
 
 ### Быстрый старт
 
