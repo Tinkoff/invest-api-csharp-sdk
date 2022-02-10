@@ -1,12 +1,10 @@
 # InvestApi .NET SDK
 
-[//]: # ()
+![Build](https://github.com/TinkoffCreditSystems/invest-api-csharp-sdk/workflows/Build/badge.svg)
 
-[//]: # (![Build]&#40;https://github.com/TinkoffCreditSystems/invest-openapi-csharp-sdk/workflows/Build/badge.svg&#41;)
+[![NuGet version (Tinkoff Trading OpenApi)](https://img.shields.io/nuget/v/Tinkoff.InvestApi.svg)](https://www.nuget.org/packages/Tinkoff.InvestApi/)
 
-[//]: # ([![NuGet version &#40;Tinkoff Trading OpenApi&#41;]&#40;https://img.shields.io/nuget/v/Tinkoff.Trading.OpenApi.svg&#41;]&#40;https://www.nuget.org/packages/Tinkoff.Trading.OpenApi/&#41;)
-
-[//]: # ([![NuGet version &#40;Tinkoff Trading OpenApi&#41;]&#40;https://img.shields.io/nuget/dt/Tinkoff.Trading.OpenApi.svg&#41;]&#40;https://www.nuget.org/packages/Tinkoff.Trading.OpenApi/&#41;)
+[![NuGet version (Tinkoff Trading OpenApi)](https://img.shields.io/nuget/dt/Tinkoff.InvestApi.svg)](https://www.nuget.org/packages/Tinkoff.InvestApi/)
 
 Данный проект представляет собой инструментарий на языке C# для работы с grpc-интерфейсом торговой
 платформы [Тинькофф Инвестиции](https://www.tinkoff.ru/invest/).
