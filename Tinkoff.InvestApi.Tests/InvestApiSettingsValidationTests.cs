@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Tinkoff.InvestApi.ClientFactory.Tests;
+namespace Tinkoff.InvestApi.Tests;
 
 public class InvestApiSettingsValidationTests
 {
@@ -11,7 +11,7 @@ public class InvestApiSettingsValidationTests
         var serviceProvider = new ServiceCollection()
             .AddInvestApiClient((_, _) => { })
             .BuildServiceProvider();
-        
+
         serviceProvider.Invoking(x => x.GetService<InvestApiClient>())
             .Should()
             .Throw<InvalidOperationException>()

@@ -7,8 +7,12 @@ var builder = Host.CreateDefaultBuilder(args);
 var host = builder
     .ConfigureServices((context, services) =>
     {
-        services.AddHostedService<Worker>()
-            .AddInvestApiClient((_, settings) => context.Configuration.Bind(settings));
+        if (context.Configuration.GetValue<bool>("Sync"))
+            services.AddHostedService<SyncSample>();
+        else
+            services.AddHostedService<AsyncSample>();
+
+        services.AddInvestApiClient((_, settings) => context.Configuration.Bind(settings));
     })
     .Build();
 await host.RunAsync();

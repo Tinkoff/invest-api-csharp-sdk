@@ -12,7 +12,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Tinkoff.InvestApi.ClientFactory\Tinkoff.InvestApi.ClientFactory.csproj"/>
         <ProjectReference Include="..\Tinkoff.InvestApi\Tinkoff.InvestApi.csproj"/>
     </ItemGroup>
 </Project>

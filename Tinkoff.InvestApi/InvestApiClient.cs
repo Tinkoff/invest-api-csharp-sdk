@@ -9,6 +9,7 @@ public class InvestApiClient
     {
         Instruments = new InstrumentsService.InstrumentsServiceClient(callInvoker);
         MarketData = new MarketDataService.MarketDataServiceClient(callInvoker);
+        MarketDataStream = new MarketDataStreamService.MarketDataStreamServiceClient(callInvoker);
         Operations = new OperationsService.OperationsServiceClient(callInvoker);
         Orders = new OrdersService.OrdersServiceClient(callInvoker);
         Sandbox = new SandboxService.SandboxServiceClient(callInvoker);
@@ -18,6 +19,7 @@ public class InvestApiClient
 
     public InstrumentsService.InstrumentsServiceClient Instruments { get; }
     public MarketDataService.MarketDataServiceClient MarketData { get; }
+    public MarketDataStreamService.MarketDataStreamServiceClient MarketDataStream { get; }
     public OperationsService.OperationsServiceClient Operations { get; }
     public OrdersService.OrdersServiceClient Orders { get; }
     public SandboxService.SandboxServiceClient Sandbox { get; }

@@ -11,7 +11,7 @@ public static class InvestApiClientExtensions
     public static IServiceCollection AddInvestApiClient(this IServiceCollection services,
         Action<IServiceProvider, InvestApiSettings> configureSettings)
     {
-        return services.AddInvestApiClient(DefaultName, configureSettings);
+        return AddInvestApiClient(services, DefaultName, configureSettings);
     }
 
     public static IServiceCollection AddInvestApiClient(this IServiceCollection services, string name,

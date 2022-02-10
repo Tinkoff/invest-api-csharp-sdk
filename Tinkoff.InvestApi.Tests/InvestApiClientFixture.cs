@@ -2,14 +2,11 @@ using Grpc.Net.ClientFactory;
 using Microsoft.Extensions.DependencyInjection;
 using RichardSzalay.MockHttp;
 
-namespace Tinkoff.InvestApi.ClientFactory.Tests;
+namespace Tinkoff.InvestApi.Tests;
 
 public class InvestApiClientFixture
 {
     internal readonly MockHttpMessageHandler MockHttpMessageHandler = new();
-    public ServiceProvider ServiceProvider { get; set; }
-
-    public InvestApiClient Client => ServiceProvider.GetRequiredService<InvestApiClient>();
 
     public InvestApiClientFixture()
     {
@@ -22,4 +19,8 @@ public class InvestApiClientFixture
             }));
         ServiceProvider = serviceCollection.BuildServiceProvider();
     }
+
+    public ServiceProvider ServiceProvider { get; set; }
+
+    public InvestApiClient Client => ServiceProvider.GetRequiredService<InvestApiClient>();
 }

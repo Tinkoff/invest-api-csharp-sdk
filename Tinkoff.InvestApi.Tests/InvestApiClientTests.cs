@@ -3,17 +3,19 @@ using System.Threading.Tasks;
 using RichardSzalay.MockHttp;
 using Tinkoff.InvestAPI.V1;
 
-namespace Tinkoff.InvestApi.ClientFactory.Tests;
+namespace Tinkoff.InvestApi.Tests;
 
 [Collection(nameof(InvestApiClientFixtureCollection))]
 public class InvestApiClientTests
 {
-    readonly InvestApiClientFixture _fixture;
+    private readonly InvestApiClientFixture _fixture;
 
     public InvestApiClientTests(InvestApiClientFixture fixture)
     {
         _fixture = fixture;
     }
+
+    private MockHttpMessageHandler Handler => _fixture.MockHttpMessageHandler;
 
     [Fact]
     public void Client_Initialization_NotThrows()
@@ -44,8 +46,6 @@ public class InvestApiClientTests
         await SendRequest();
         _fixture.MockHttpMessageHandler.VerifyNoOutstandingExpectation();
     }
-
-    private MockHttpMessageHandler Handler => _fixture.MockHttpMessageHandler;
 
     private async Task SendRequest()
     {
