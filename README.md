@@ -1,6 +1,6 @@
 # InvestApi .NET SDK
 
-![Build](https://github.com/TinkoffCreditSystems/invest-api-csharp-sdk/workflows/Build/badge.svg)
+[![Build](https://github.com/Tinkoff/invest-api-csharp-sdk/actions/workflows/dotnet.yml/badge.svg)](https://github.com/Tinkoff/invest-api-csharp-sdk/actions/workflows/dotnet.yml)
 
 [![NuGet version (Tinkoff Trading OpenApi)](https://img.shields.io/nuget/v/Tinkoff.InvestApi.svg)](https://www.nuget.org/packages/Tinkoff.InvestApi/)
 
