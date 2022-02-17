@@ -21,6 +21,7 @@ SDK [доступен](https://www.nuget.org/packages/Tinkoff.InvestApi/) на n
 ```bash
 dotnet build -c Release
 ```
+Основной код сервисов генерируется по .proto файлам при сборке, для этого используются source generators. 
 
 ## Документация
 
@@ -62,6 +63,6 @@ dotnet user-secrets set "AccessToken" "<token>"
 
 ### У меня есть вопрос
 
-[Основной репозиторий с документацией](https://github.com/TinkoffCreditSystems/invest-openapi/) — в нем вы можете задать
+[Основной репозиторий с документацией](https://github.com/Tinkoff/investAPI/) — в нем вы можете задать
 вопрос в Issues и получать информацию о релизах в Releases. Если возникают вопросы по данному SDK, нашёлся баг или есть
 предложения по улучшению, то можно задать его в Issues.
