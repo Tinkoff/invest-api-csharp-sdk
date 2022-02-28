@@ -12,6 +12,7 @@ public class InvestApiClient
         MarketDataStream = new MarketDataStreamService.MarketDataStreamServiceClient(callInvoker);
         Operations = new OperationsService.OperationsServiceClient(callInvoker);
         Orders = new OrdersService.OrdersServiceClient(callInvoker);
+        OrdersStream = new OrdersStreamService.OrdersStreamServiceClient(callInvoker);
         Sandbox = new SandboxService.SandboxServiceClient(callInvoker);
         StopOrders = new StopOrdersService.StopOrdersServiceClient(callInvoker);
         Users = new UsersService.UsersServiceClient(callInvoker);
@@ -22,6 +23,7 @@ public class InvestApiClient
     public MarketDataStreamService.MarketDataStreamServiceClient MarketDataStream { get; }
     public OperationsService.OperationsServiceClient Operations { get; }
     public OrdersService.OrdersServiceClient Orders { get; }
+    public OrdersStreamService.OrdersStreamServiceClient OrdersStream { get; set; }
     public SandboxService.SandboxServiceClient Sandbox { get; }
     public StopOrdersService.StopOrdersServiceClient StopOrders { get; }
     public UsersService.UsersServiceClient Users { get; }
