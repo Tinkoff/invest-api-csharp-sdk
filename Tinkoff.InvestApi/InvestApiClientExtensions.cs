@@ -25,10 +25,11 @@ public static class InvestApiClientExtensions
                 configureSettings(serviceProvider, settings);
                 var accessToken = settings.AccessToken ??
                                   throw new InvalidOperationException("AccessToken is required");
+                var appName = string.IsNullOrEmpty(settings.AppName) ? "tinkoff.invest-api-csharp-sdk" : settings.AppName;
                 var credentials = CallCredentials.FromInterceptor((_, metadata) =>
                 {
                     metadata.Add("Authorization", $"Bearer {accessToken}");
-                    metadata.Add("x-app-name", "tinkoff.invest-api-csharp-sdk");
+                    metadata.Add("x-app-name", appName);
                     return Task.CompletedTask;
                 });
 
