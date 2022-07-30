@@ -1,4 +1,4 @@
-﻿Cначала нужно добавить токен в переменную окружения.
+Cначала нужно добавить токен в переменную окружения.
 - sh
 ```shell
 $ export TOKEN=YOUR_TOKEN
@@ -8,11 +8,11 @@ $ export TOKEN=YOUR_TOKEN
 $ set TOKEN=YOUR_TOKEN
 ```
 - powershell
-```pwsh
+```powershell
 $ $env:TOKEN = "YOUR_TOKEN"
 ```
 А потом можно запускать примеры
 
 ```shell
-$ dotnet run --project ./samples/Samples.MarketDataStream
+$ dotnet run --project ./Examples/Samples.MarketDataStream
 ```
