@@ -1,24 +1,10 @@
 #### Что этот пример показывает
 Этот пример показывает, как можно работать со стримами.
+
 #### Что тут происходит
 1. Подписка на обновление свечей определённого инструмента раз в минуту
 2. Вывод иноформации о новой свече в формате json, как только она получена.
-#### Как запустить пример
-Cначала нужно добавить токен в переменную окружения.
-- sh
-```shell
-$ export TOKEN=YOUR_TOKEN
-```
-- cmd
-```shell
-$ set TOKEN=YOUR_TOKEN
-```
-- powershell
-```powershell
-$ $env:TOKEN = "YOUR_TOKEN"
-```
-А потом можно запускать примеры
 
-```shell
-$ dotnet run --project ./Examples/Samples.MarketDataStream
-```
+#### Как запустить
+1. Добавье ваш токен в переменную окружения `TOKEN`
+2. `dotnet run -p ./Examples/Tinkoff.InvestApi.Examples.MarketDataStream`

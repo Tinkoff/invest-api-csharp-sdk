@@ -5,6 +5,7 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <UserSecretsId>2323bae0-f4bf-4c7b-90ce-1b87d3fd76a8</UserSecretsId>
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="Tinkoff.InvestApi" Version="0.1.6" />
