@@ -42,6 +42,14 @@ InvestApiClient можно внедрить непосредственно в м
 
 ### Примеры
 
+#### Примеры по отдельным функциям
+
+Перед запуском, нужно добавить токен в переменную окружения `TOKEN`
+
+- [Получение информации о рынке в реальном времени](Examples/Tinkoff.InvestApi.Examples.MarketDataStream)
+
+#### Сложное приложение
+
 Проект [Tinkoff.InvestApi.Sample](Tinkoff.InvestApi.Sample) является примером использования SDK. При запуске будут
 использованы методы InvestApi, результаты будут выведены в консоль. Перед запуском сохраните свой токен
 в [user secrets](https://docs.microsoft.com/ru-ru/aspnet/core/security/app-secrets):

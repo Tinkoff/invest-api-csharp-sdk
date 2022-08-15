@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{1C4A955D-3
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{50CAEE66-4B81-41B1-B2A5-8124AE02D19E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinkoff.InvestApi.Examples.MarketDataStream", "Examples\Tinkoff.InvestApi.Examples.MarketDataStream\Tinkoff.InvestApi.Examples.MarketDataStream.csproj", "{E96FFFD4-060D-4082-87A7-8EBB9638E2C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,5 +33,12 @@ Global
 		{F1CA7E8C-7DE4-480D-8A90-973FF18CE8A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1CA7E8C-7DE4-480D-8A90-973FF18CE8A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1CA7E8C-7DE4-480D-8A90-973FF18CE8A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E96FFFD4-060D-4082-87A7-8EBB9638E2C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E96FFFD4-060D-4082-87A7-8EBB9638E2C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E96FFFD4-060D-4082-87A7-8EBB9638E2C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E96FFFD4-060D-4082-87A7-8EBB9638E2C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E96FFFD4-060D-4082-87A7-8EBB9638E2C7} = {50CAEE66-4B81-41B1-B2A5-8124AE02D19E}
 	EndGlobalSection
 EndGlobal
