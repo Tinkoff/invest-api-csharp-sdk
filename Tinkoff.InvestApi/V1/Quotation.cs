@@ -11,7 +11,7 @@ public partial class Quotation
 
     public static implicit operator Quotation(decimal value)
     {
-        var wholePart = (long)Math.Truncate(value);
+        var wholePart = (long)value;
 
         return new Quotation
         {
