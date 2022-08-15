@@ -8,4 +8,15 @@ public partial class Quotation
     {
         return value.Units + value.Nano / NanoFactor;
     }
+
+    public static implicit operator Quotation(decimal value)
+    {
+        var wholePart = (long)value;
+
+        return new Quotation
+        {
+            Units = wholePart,
+            Nano = (int)((value - wholePart) * NanoFactor)
+        };
+    }
 }

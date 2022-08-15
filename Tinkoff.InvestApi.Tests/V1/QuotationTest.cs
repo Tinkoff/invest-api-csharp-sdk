@@ -6,8 +6,11 @@ public class QuotationTest
 {
     [Theory]
     [ClassData(typeof(QuotationTestData))]
-    public void ConvertToDecimal(Quotation quotation, decimal expectation)
+    public void ConversionTests(Quotation quotation, decimal expectation)
     {
+        ((decimal) quotation).Should().Be(expectation);
+
+        quotation = expectation;
         ((decimal) quotation).Should().Be(expectation);
     }
 }
