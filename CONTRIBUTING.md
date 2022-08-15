@@ -1,4 +1,4 @@
 ## How to update contracts from proto files:
-- `git submodule update --remote`
-- increment version at `Tinkoff.InvestApi/Tinkoff.InvestApi.csproj`
-- push changes
+1. Update submodule `git submodule update --remote`
+2. Increment version at `Tinkoff.InvestApi/Tinkoff.InvestApi.csproj`
+3. Push changes. Nuget package will be published automatically from main branch
