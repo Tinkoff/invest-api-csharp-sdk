@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
@@ -8,8 +8,10 @@
         <UserSecretsId>2323bae0-f4bf-4c7b-90ce-1b87d3fd76a8</UserSecretsId>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Tinkoff.InvestApi" Version="0.1.6" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    </ItemGroup>
+    <ItemGroup> 
+      <ProjectReference Include="..\..\Tinkoff.InvestApi\Tinkoff.InvestApi.csproj" />
     </ItemGroup>
 </Project>

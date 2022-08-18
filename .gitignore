@@ -351,3 +351,6 @@ MigrationBackup/
 
 # Rider
 .idea/
+
+# Приватные настройки
+Examples/**/launchSettings.json
