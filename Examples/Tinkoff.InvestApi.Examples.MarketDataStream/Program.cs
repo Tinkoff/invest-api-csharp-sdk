@@ -19,7 +19,6 @@ var serviceProvider = serviceCollection.BuildServiceProvider();
 
 var client = serviceProvider.GetRequiredService<InvestApiClient>();
 
-
 var stream = client.MarketDataStream.MarketDataStream();
 // Отправляем запрос в стрим
 await stream.RequestStream.WriteAsync(new MarketDataRequest
@@ -33,7 +32,8 @@ await stream.RequestStream.WriteAsync(new MarketDataRequest
 				Figi = "BBG004730N88",
 				Interval = SubscriptionInterval.OneMinute
 			}
-		}
+		},
+		SubscriptionAction = SubscriptionAction.Subscribe
 	}
 });
 // Обрабатываем все приходящие из стрима ответы
