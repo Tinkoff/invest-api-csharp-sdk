@@ -21,6 +21,7 @@ public static class InvestApiClientExtensions
                 o => o.Address = new Uri("https://invest-public-api.tinkoff.ru:443"))
             .ConfigureChannel((serviceProvider, options) =>
             {
+                options.MaxReceiveMessageSize = null;
                 var settings = new InvestApiSettings();
                 configureSettings(serviceProvider, settings);
                 var accessToken = settings.AccessToken ??
