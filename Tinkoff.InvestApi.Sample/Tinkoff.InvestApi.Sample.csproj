@@ -9,9 +9,7 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0"/>
+        <PackageReference Include="Tinkoff.InvestApi" Version="0.1.8"/>
     </ItemGroup>
-
-    <ItemGroup>
-        <ProjectReference Include="..\Tinkoff.InvestApi\Tinkoff.InvestApi.csproj"/>
-    </ItemGroup>
+     
 </Project>
