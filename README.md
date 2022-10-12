@@ -38,7 +38,19 @@ dotnet build -c Release
 
 ### Быстрый старт
 
-Для взаимодействия с InvestApi нужно зарегистрировать InvestApiClient, который является фасадом для grpc сервисов.
+Для взаимодействия к InvestApi используется класс `InvestApiClient`, который является фасадом для grpc сервисов. Есть несколько способов его создания.
+
+#### Создание через фабрику
+
+Этот способ подходит для быстрого старта или для приложений без [Generic Host](https://docs.microsoft.com/ru-ru/aspnet/core/fundamentals/host/generic-host), например WinForms или консольные приложения в старом стиле.
+
+```csharp
+var client = InvestApiClientFactory.Create("<token>");
+```
+
+#### Создание через DI
+
+Для проектов, использующих [Generic Host](https://docs.microsoft.com/ru-ru/aspnet/core/fundamentals/host/generic-host), например AspNetCore или консольные приложения в новом стиле, можно зарегистрировать InvestApiClient в DI.
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -47,7 +59,16 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-InvestApiClient можно внедрить непосредственно в места использования.
+Далее InvestApiClient можно внедрить непосредственно в места использования.
+
+```csharp
+class TradingBot 
+{
+    public TradingBot(InvestApiClient investApiClient)
+    {
+    }
+}
+```
 
 ### Примеры
 
