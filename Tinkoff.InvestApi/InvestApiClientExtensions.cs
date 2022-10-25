@@ -30,7 +30,10 @@ public static class InvestApiClientExtensions
                 var credentials = CallCredentials.FromInterceptor((_, metadata) =>
                 {
                     metadata.Add("Authorization", $"Bearer {accessToken}");
-                    metadata.Add("x-app-name", appName);
+                    if (appName != null)
+                    {
+                        metadata.Add("x-app-name", appName);
+                    }
                     return Task.CompletedTask;
                 });
 
