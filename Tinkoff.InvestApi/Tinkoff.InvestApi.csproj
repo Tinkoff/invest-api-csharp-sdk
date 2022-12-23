@@ -13,6 +13,7 @@
         <Description>SDK для работы с grpc-интерфейсом торговой платформы Тинькофф Инвестиции</Description>
         <PackageProjectUrl>https://www.tinkoff.ru/invest/</PackageProjectUrl>
         <RepositoryUrl>https://github.com/Tinkoff/invest-api-csharp-sdk</RepositoryUrl>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>
