@@ -18,7 +18,14 @@ public static class InvestApiClientExtensions
         Action<IServiceProvider, InvestApiSettings> configureSettings)
     {
         services.AddGrpcClient<InvestApiClient>(name,
-                o => o.Address = new Uri("https://invest-public-api.tinkoff.ru:443"))
+                (serviceProvider, options) =>
+                {
+                    var settings = new InvestApiSettings();
+                    configureSettings(serviceProvider, settings);
+                    options.Address = settings.Sandbox
+                        ? new Uri("https://sandbox-invest-public-api.tinkoff.ru:443")
+                        : new Uri("https://invest-public-api.tinkoff.ru:443");
+                })
             .ConfigureChannel((serviceProvider, options) =>
             {
                 options.MaxReceiveMessageSize = null;
@@ -26,7 +33,9 @@ public static class InvestApiClientExtensions
                 configureSettings(serviceProvider, settings);
                 var accessToken = settings.AccessToken ??
                                   throw new InvalidOperationException("AccessToken is required");
-                var appName = string.IsNullOrEmpty(settings.AppName) ? "tinkoff.invest-api-csharp-sdk" : settings.AppName;
+                var appName = string.IsNullOrEmpty(settings.AppName)
+                    ? "tinkoff.invest-api-csharp-sdk"
+                    : settings.AppName;
                 var credentials = CallCredentials.FromInterceptor((_, metadata) =>
                 {
                     metadata.Add("Authorization", $"Bearer {accessToken}");
@@ -34,6 +43,7 @@ public static class InvestApiClientExtensions
                     {
                         metadata.Add("x-app-name", appName);
                     }
+
                     return Task.CompletedTask;
                 });
 
